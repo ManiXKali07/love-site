@@ -72,18 +72,3 @@ function submitLetter() {
   error.innerText = "";
   finalLetter.innerText = letter;
 }
-
-  const letterBox = document.getElementById("letter");
-  const error = document.getElementById("error");
-  const finalText = document.getElementById("finalLetter");
-
-  submitCount++;
-
-  if (submitCount === 1) {
-    error.innerText = "Oops 😅 Try again with more love!";
-    finalText.innerText = "";
-  } else {
-    error.innerText = "";
-    finalText.innerText = letterBox.value;
-  }
-}
