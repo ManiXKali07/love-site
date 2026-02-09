@@ -25,7 +25,7 @@ const memories = [
   { src: "images/slide2.jpg", text: "First selfie" },
   { src: "images/slide3.jpg", text: "Our love memory" },
   { src: "images/slide4.jpg", text: "My 💕" },
-  { src: "images/slide5.jpg", text: "My 🫂 soul • My heartbeat 🫀 • My 🫂🫶🏻" }
+  { src: "images/slide5.jpg", text: "My 🫂 soul • My heartbeat 🫀" }
 ];
 
 function nextMoment() {
@@ -49,9 +49,30 @@ function nextMoment() {
 }
 
 // ---------- LOVE LETTER LOGIC (PAGE 5) ----------
-let submitCount = 0;
+// ---------- PAGE 5 LOVE LETTER (FINAL FIX) ----------
+let isFirstTry = true;
 
 function submitLetter() {
+  const letter = document.getElementById("letter").value.trim();
+  const error = document.getElementById("error");
+  const finalLetter = document.getElementById("finalLetter");
+
+  if (isFirstTry) {
+    error.innerText = "Oops 😅 Something went wrong, try again ❤️";
+    finalLetter.innerText = "";
+    isFirstTry = false;
+    return;
+  }
+
+  if (letter === "") {
+    error.innerText = "Please write your love first 💕";
+    return;
+  }
+
+  error.innerText = "";
+  finalLetter.innerText = letter;
+}
+
   const letterBox = document.getElementById("letter");
   const error = document.getElementById("error");
   const finalText = document.getElementById("finalLetter");
