@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Love Letter</title>
+  <title>Love Letter 💖</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="css/style.css">
@@ -13,10 +13,19 @@
   <div class="card">
     <h2>Write your love letter 💖</h2>
 
-    <textarea id="letter" placeholder="Type your feelings here..."></textarea>
+    <!-- Love letter image -->
+    <img src="images/love-letter.png" alt="Love Letter" class="letter-img">
 
+    <!-- Text area -->
+    <textarea
+      id="letter"
+      placeholder="Type your feelings here..."
+    ></textarea>
+
+    <!-- Button -->
     <button type="button" onclick="submitLetter()">Submit 💌</button>
 
+    <!-- Error & output -->
     <p id="error" class="error"></p>
     <p id="finalLetter" class="final"></p>
   </div>
