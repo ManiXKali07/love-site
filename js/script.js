@@ -52,11 +52,6 @@ function submitLetter() {
   const error = document.getElementById("error");
   const finalLetter = document.getElementById("finalLetter");
 
-  if (!letterBox) {
-    alert("JS connected ❌ but textarea not found");
-    return;
-  }
-
   const text = letterBox.value.trim();
 
   if (text === "") {
@@ -65,5 +60,21 @@ function submitLetter() {
   }
 
   error.innerText = "";
-  finalLetter.innerText = text;
+  finalLetter.innerText = "";
+
+  let index = 0;
+
+  const typingInterval = setInterval(() => {
+    finalLetter.innerText += text.charAt(index);
+    index++;
+
+    if (index >= text.length) {
+      clearInterval(typingInterval);
+
+      // Redirect after typing finishes
+      setTimeout(() => {
+        window.location.href = "page6.html";
+      }, 2000);
+    }
+  }, 60); // typing speed
 }
