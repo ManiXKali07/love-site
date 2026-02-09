@@ -48,15 +48,13 @@ function nextMoment() {
   }
 }
 
-/* ---------- LOVE LETTER LOGIC (PAGE 5) ---------- */
+// ---------- LOVE LETTER LOGIC (PAGE 5) ----------
 let submitCount = 0;
 
 function submitLetter() {
   const letterBox = document.getElementById("letter");
   const error = document.getElementById("error");
   const finalText = document.getElementById("finalLetter");
-
-  if (!letterBox || !error || !finalText) return;
 
   submitCount++;
 
