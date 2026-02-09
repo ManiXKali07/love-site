@@ -47,19 +47,23 @@ function nextMoment() {
     window.location.href = "page4.html";
   }
 }
-
-// ---------- LOVE LETTER LOGIC (PAGE 5) ----------
-// ---------- PAGE 5 LOVE LETTER (FINAL FIX) ----------
 function submitLetter() {
-  const letter = document.getElementById("letter").value.trim();
+  const letterBox = document.getElementById("letter");
   const error = document.getElementById("error");
   const finalLetter = document.getElementById("finalLetter");
 
-  if (letter === "") {
+  if (!letterBox) {
+    alert("JS connected ❌ but textarea not found");
+    return;
+  }
+
+  const text = letterBox.value.trim();
+
+  if (text === "") {
     error.innerText = "Please write your love first 💕";
     return;
   }
 
   error.innerText = "";
-  finalLetter.innerText = letter;
+  finalLetter.innerText = text;
 }
